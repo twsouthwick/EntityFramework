@@ -13,8 +13,7 @@ using Microsoft.Data.Entity.Query;
 
 namespace Microsoft.Data.Entity
 {
-    public abstract class DbSet<TEntity> : IOrderedQueryable<TEntity>, IAsyncEnumerableAccessor<TEntity>, IAccessor<IServiceProvider>
-        where TEntity : class
+    public abstract class DbSet<TEntity> : IDbSet<TEntity>, IOrderedQueryable<TEntity>, IAsyncEnumerableAccessor<TEntity>, IAccessor<IServiceProvider> where TEntity : class
     {
         public virtual EntityEntry<TEntity> Add([NotNull] TEntity entity)
         {
